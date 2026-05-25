@@ -1,7 +1,7 @@
 """
-tests/oops/test_oops_geometry.py
+tests/mathmatics/test_mathmatics_geometry.py
 ==================================
-Tests for all OOP geometry classes under oops/geometry/:
+Tests for all OOP geometry classes under mathmatics/geometry/:
 
     Areas        — rectangle, square, triangle, circle, parallelogram,
                    cube, trapezoid, circular-ring
@@ -10,7 +10,7 @@ Tests for all OOP geometry classes under oops/geometry/:
     Surface Areas— cube, rectangular-prism, cylinder, sphere, right-circular-cone
     Misc         — Pythagorean theorem, Vector2D
 
-(*) Note: oops/geometry/volume/cylinder.py contains a known bug — it uses the
+(*) Note: mathmatics/geometry/volume/cylinder.py contains a known bug — it uses the
     sphere formula (4/3)πr³ instead of the cylinder formula πr²h.  Tests assert
     what the code actually computes and are labelled accordingly.
 """
@@ -28,86 +28,86 @@ from tests.utils import load_module, load_class
 
 # ── Areas ─────────────────────────────────────────────────────────────────────
 def _Rectangle():
-    return load_module('oops/geometry/areas/rectangle.py',    ['1','1'], alias='oa_rect').Rectangle
+    return load_module('mathmatics/geometry/areas/rectangle.py',    ['1','1'], alias='oa_rect').Rectangle
 
 def _Square_area():
-    return load_module('oops/geometry/areas/square.py',       ['1'],     alias='oa_sq').Square
+    return load_module('mathmatics/geometry/areas/square.py',       ['1'],     alias='oa_sq').Square
 
 def _Triangle_area():
-    return load_module('oops/geometry/areas/triangle.py',     ['1','1'], alias='oa_tri').triangle
+    return load_module('mathmatics/geometry/areas/triangle.py',     ['1','1'], alias='oa_tri').triangle
 
 def _Areaofcircle():
-    return load_module('oops/geometry/areas/circle.py',       ['1'],     alias='oa_circle').areaofcircle
+    return load_module('mathmatics/geometry/areas/circle.py',       ['1'],     alias='oa_circle').areaofcircle
 
 def _Areaofparallelogram():
-    return load_module('oops/geometry/areas/parallelogram.py',['1','1'], alias='oa_para').areaofparallelogram
+    return load_module('mathmatics/geometry/areas/parallelogram.py',['1','1'], alias='oa_para').areaofparallelogram
 
 def _Cube_area():           # cube = cube(a) → shadowed
-    return load_class('oops/geometry/areas/cube.py', 'cube')
+    return load_class('mathmatics/geometry/areas/cube.py', 'cube')
 
 def _Trapezoid_area():      # trapezoid = trapezoid(...) → shadowed
-    return load_class('oops/geometry/areas/trapezoid.py', 'trapezoid')
+    return load_class('mathmatics/geometry/areas/trapezoid.py', 'trapezoid')
 
 def _Circularring():
-    return load_module('oops/geometry/areas/circlualarring.py',['2','1'],alias='oa_ring').circularring
+    return load_module('mathmatics/geometry/areas/circlualarring.py',['2','1'],alias='oa_ring').circularring
 
 # ── Perimeters ────────────────────────────────────────────────────────────────
 def _Square_peri():         # square = square(s) → shadowed
-    return load_class('oops/geometry/perimeter/square.py', 'square')
+    return load_class('mathmatics/geometry/perimeter/square.py', 'square')
 
 def _RectPerimeter():       # class 'square', variable 'rectangle' → not shadowed
-    return load_module('oops/geometry/perimeter/rectangle.py',['1','1'],alias='op_rect').square
+    return load_module('mathmatics/geometry/perimeter/rectangle.py',['1','1'],alias='op_rect').square
 
 def _Triangle_peri():       # triangle = triangle(...) → shadowed
-    return load_class('oops/geometry/perimeter/traingle.py', 'triangle')
+    return load_class('mathmatics/geometry/perimeter/traingle.py', 'triangle')
 
 def _Parllelogram():        # parllelogram = parllelogram(...) → shadowed
-    return load_class('oops/geometry/perimeter/parallelogram.py', 'parllelogram')
+    return load_class('mathmatics/geometry/perimeter/parallelogram.py', 'parllelogram')
 
 def _Trapezoid_peri():      # trapezoid = trapezoid(...) → shadowed
-    return load_class('oops/geometry/perimeter/trapezoid.py', 'trapezoid')
+    return load_class('mathmatics/geometry/perimeter/trapezoid.py', 'trapezoid')
 
 # ── Volumes ───────────────────────────────────────────────────────────────────
 def _Cube_vol():            # cube = cube(s) → shadowed
-    return load_class('oops/geometry/volume/cube.py', 'cube')
+    return load_class('mathmatics/geometry/volume/cube.py', 'cube')
 
 def _Rectanglularprism_vol():  # shadowed
-    return load_class('oops/geometry/volume/rectanglularprism.py', 'rectanglularprism')
+    return load_class('mathmatics/geometry/volume/rectanglularprism.py', 'rectanglularprism')
 
 def _Cylinder_vol():        # BUG: uses sphere formula; shadowed
-    return load_class('oops/geometry/volume/cylinder.py', 'cylinder')
+    return load_class('mathmatics/geometry/volume/cylinder.py', 'cylinder')
 
 def _Sphere_vol():          # sphere = sphere(r) → shadowed
-    return load_class('oops/geometry/volume/sphere.py', 'sphere')
+    return load_class('mathmatics/geometry/volume/sphere.py', 'sphere')
 
 def _Rightcircularcone_vol():   # shadowed
-    return load_class('oops/geometry/volume/rightcircularcone.py', 'rightcircularcone')
+    return load_class('mathmatics/geometry/volume/rightcircularcone.py', 'rightcircularcone')
 
 # ── Surface Areas ─────────────────────────────────────────────────────────────
 def _Cube_sa():             # cube = cube(s) → shadowed
-    return load_class('oops/geometry/surfacearea/cube.py', 'cube')
+    return load_class('mathmatics/geometry/surfacearea/cube.py', 'cube')
 
 def _Rectanglularprism_sa():   # shadowed
-    return load_class('oops/geometry/surfacearea/rectanglularprism.py', 'rectanglularprism')
+    return load_class('mathmatics/geometry/surfacearea/rectanglularprism.py', 'rectanglularprism')
 
 def _Cylinder_sa():         # cylinder = cylinder(...) → shadowed
-    return load_class('oops/geometry/surfacearea/cylinder.py', 'cylinder')
+    return load_class('mathmatics/geometry/surfacearea/cylinder.py', 'cylinder')
 
 def _Sphere_sa():           # sphere = sphere(r) → shadowed
-    return load_class('oops/geometry/surfacearea/sphere.py', 'sphere')
+    return load_class('mathmatics/geometry/surfacearea/sphere.py', 'sphere')
 
 def _Rightcurclularcode():  # fixed: self.s now computed in __init__
-    return load_class('oops/geometry/surfacearea/rightcircularcone.py', 'rightcurclularcode')
+    return load_class('mathmatics/geometry/surfacearea/rightcircularcone.py', 'rightcurclularcode')
 
 def _Cone_surface():        # surface/ version uses 3.14 for lateral surface
-    return load_class('oops/geometry/surface/rightcircularcone.py', 'rightcircularcone')
+    return load_class('mathmatics/geometry/surface/rightcircularcone.py', 'rightcircularcone')
 
 # ── Misc ──────────────────────────────────────────────────────────────────────
 def _Pythogorentherom():    # pythogorentherom = pythogorentherom(...) → shadowed
-    return load_class('oops/geometry/pythogorentherom.py', 'pythogorentherom')
+    return load_class('mathmatics/geometry/pythogorentherom.py', 'pythogorentherom')
 
 def _Vector2D():            # variable 'vector' ≠ class 'Vector2D' → not shadowed
-    return load_module('oops/geometry/vector.py', ['3','4'], alias='oa_vec').Vector2D
+    return load_module('mathmatics/geometry/vector.py', ['3','4'], alias='oa_vec').Vector2D
 
 
 # ═════════════════════════════════════════════════════════════════════════════
@@ -281,7 +281,7 @@ class TestRectangularPrismVolume:
 
 class TestCylinderVolumeBug:
     """
-    oops/geometry/volume/cylinder.py
+    mathmatics/geometry/volume/cylinder.py
     BUG: source uses sphere formula (4/3)πr³ instead of cylinder formula πr²h.
     Tests document the *actual* (buggy) computed value.
     """
@@ -364,7 +364,7 @@ class TestSphereSurfaceArea:
 
 class TestRightCircularConeSurfaceAreaFixed:
     """
-    oops/geometry/surfacearea/rightcircularcone.py  (bug fixed)
+    mathmatics/geometry/surfacearea/rightcircularcone.py  (bug fixed)
     SA = πr² + πrs   where  s = √(r² + h²)  (slant height, set in __init__)
     """
 
@@ -384,7 +384,7 @@ class TestRightCircularConeSurfaceAreaFixed:
 
 class TestRightCircularConeSurfaceAreaAlt:
     """
-    oops/geometry/surface/rightcircularcone.py (alternate version)
+    mathmatics/geometry/surface/rightcircularcone.py (alternate version)
     SA = πr² + 3.14 × r × s   (uses 3.14 for lateral term, not math.pi)
     """
 
