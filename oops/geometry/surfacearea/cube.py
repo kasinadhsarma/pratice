@@ -6,8 +6,8 @@ class cube:
     def __init__(self, s):
         self.s = s
     def get_surface_area(self):
-        return 6 * self.s * self.s
-
+        #return 6 * self.s * self.s
+        retrun 6* self.s ** 2
 
 s = int(input("enter the side of the cube: "))
 cube = cube(s)
